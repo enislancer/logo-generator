@@ -62,145 +62,37 @@
 
 	<div id="select_font_panel" >
 		<div class="flex-center" style="margin-top: 50px;">
-			<h2>Select Font Panel</h2>	
+			<h2>Font Panel</h2>	
 		</div>
-		<div class="flex-center" style="margin: 10px;">
+		<div class="flex-center" id="font_panel_input_div" style="margin: 10px;">
+			<div id="div_adj1" class="flex-center">
+				<span> Input </span>&nbsp;&nbsp;
+				 <div class="autocomplete" style="width:150px;">
+					
+					<input id="adj1" class="" type="text" name="adj1" placeholder="Enter Adjective">
+				</div>	
+			</div>
+		</div>
 
-			<span> Primary</span>&nbsp;&nbsp;&nbsp;
-			<select>
-				<option></option>
-				<option value="">balanced</option>
-				<option value="">bold</option>
-				<option value="">bubbly</option>
-				<option value="">casual</option>
-				<option value="">charming</option>
-				<option value="">cheerful</option>
-				<option value="">classic</option>
-				<option value="">classy</option>
-				<option value="">clean</option>
-				<option value="">comic</option>
-				<option value="">confident</option>
-				<option value="">cute</option>
-				<option value="">creative</option>
-				<option value="">daring</option>
-				<option value="">dynamic</option>
-				<option value="">eccentric</option>
-				<option value="">elegant</option>
-				<option value="">ethereal</option>
-				<option value="">expressive</option>
-				<option value="">familiar</option>
-				<option value="">fashionable</option>
-				<option value="">feminine</option>
-				<option value="">flirty</option>
-				<option value="">frank</option>
-				<option value="">free</option>
-				<option value="">friendly</option>
-				<option value="">fresh</option>
-				<option value="">funky</option>
-				<option value="">futuristic</option>
-				<option value="">glamorous</option>
-				<option value="">informal</option>
-				<option value="">retro</option>
-				<option value="">rough</option>
-				<option value="">traditional</option>
-				<option value="">trustworthy</option>
-				<option value="">lighthearted</option>
-				<option value="">lively</option>
-				<option value="">loyal</option>
-				<option value="">masculine</option>
-				<option value="">modern</option>
-				<option value="">playful</option>
-				<option value="">posh</option>
-				<option value="">punchy</option>
-				<option value="">retro</option>
-				<option value="">romantic</option>
-				<option value="">sincere</option>
-				<option value="">sophisticated</option>
-				<option value="">standard</option>
-				<option value="">striking</option>
-				<option value="">strong</option>
-				<option value="">stylish</option>
-				<option value="">subtle</option>
-				<option value="">subversive</option>
-				<option value="">timeless</option>
-				<option value="">unconventional</option>
-				<option value="">untraditional</option>
-				<option value="">urban</option>
-				<option value="">victorian</option>
-				<option value="">visionary</option>
-				<option value="">warm</option>
-				<option value="">whimsical</option>
-				<option value="">youthful</option>
 
-			</select>
-			 &nbsp;&nbsp;&nbsp; <span> Supporting1</span>&nbsp;
-			 <div class="autocomplete" style="width:150px;">
-				
-				<input id="support_adj1" type="text" name="support_adj1" placeholder="Enter Adjective">
-			</div>
-			&nbsp;&nbsp;&nbsp; <span> Supporting2</span>&nbsp;
-			 <div class="autocomplete" style="width:150px;">
-				
-				<input id="support_adj2" type="text" name="support_adj2" placeholder="Enter Adjective">
-			</div>
-			&nbsp;&nbsp;&nbsp; <span> Supporting3</span>&nbsp;
-			 <div class="autocomplete" style="width:150px;">
-				
-				<input id="support_adj3" type="text" name="support_adj3" placeholder="Enter Adjective">
-			</div>
-			&nbsp;&nbsp;&nbsp; <span> Supporting4</span>&nbsp;
-			 <div class="autocomplete" style="width:150px;">
-				
-				<input id="support_adj4" type="text" name="support_adj4" placeholder="Enter Adjective">
-			</div>
+		<div class="flex-center" style="margin-top: 10px;">
+			<button class="btn-primary" onclick="font_add_more();">
+				ADD	More
+			</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button class="btn-primary" onclick="selectFont();">
+				input Done
+			</button>
 		</div>
-		<div class="flex-center">
-			<span>Paired with1 </span>&nbsp;&nbsp;&nbsp;
-			<select>
-				<option></option>
-				<option>Lato</option>
-				<option>Montserrat</option>
-				<option>Open Sans</option>
-				<option>Oswald</option>
-				<option>Playfair</option>
-				<option>Poppins</option>
-				<option>Raleway</option>
-				<option>Roboto</option>
-				<option>Roboto Condensed</option>
-				<option>Source Sans Pro</option>
-			</select>
-			&nbsp;&nbsp;<span>Paired with2 </span>&nbsp;&nbsp;&nbsp;
-			<select>
-				<option></option>
-				<option>Lato</option>
-				<option>Montserrat</option>
-				<option>Open Sans</option>
-				<option>Oswald</option>
-				<option>Playfair</option>
-				<option>Poppins</option>
-				<option>Raleway</option>
-				<option>Roboto</option>
-				<option>Roboto Condensed</option>
-				<option>Source Sans Pro</option>
-			</select>
-			&nbsp;&nbsp;&nbsp;
-			<span>Style</span>&nbsp;&nbsp;&nbsp;
-			
-			<select>
-				<option>body</option>
-				<option>display</option>
-			</select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button onclick="selectFont();">Done</button>
-		</div>
+		
 
 		
 	</div>
-	<div id="select_graphic_element_panel" style="margin-top: 50px;">
+	<div id="select_graphic_element_panel" style="margin-top: 20px;">
 		<div class="flex-center">
-			<h2>Select Graphic Elements Panel</h2>	
+			<h2>Graphic Panel</h2>	
 		</div>
 		<div class="flex-center" style="margin: 10px;">
-			<h1>....<h1>
+			<h1><h1>
 		</div>
 
 	</div>
@@ -208,28 +100,7 @@
 	
 
 	<div class="flex-center">
-		
 
-		<br>
-		<h4>
-		For the test, I built this . This is simple but will develop as you want. <br>
-		I made 2 ways for input in selecting font panel ... The first one is "select" tag (eg: Primary) and the second one is autocompleted "input" (eg: Supporting ~). <br>
-		If you input part of the text in Input field, then the auto text is displayed and it will help the customers.
-		<br><br>
-		 When the customer finish input their requirement, press the done button, Our Logo engine will select the proper Fonts automatically by the rules for the customer.
-		<br>
-		This workflow is right for our project?
-		<br>
-		<br>
-		And I didn't understand the meaning of Paired field (Lato, Open sans and so on )<br>
-		Please let me know the all of above.
-		<br><br>
-		After discussing with you,  the above workflow will be adapted for other category like Graphics, frames and icons.
-		<br><br>
-		Thanks 
-		<br>
-		Eliran	
-		</h4>
 	</div>
 
 	<!--
@@ -262,18 +133,38 @@
 		not support canvas?
 	</canvas> !-->
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
+	var nowFontCount = 1;
+	
 	function selectFont(){
-		alert("We recommend the 'Modak' font for you. This is example for Britney.");
+		
+		var request = new XMLHttpRequest();
+		var json = (function() {
+		  var json = null;
+		  $.ajax({
+		    'async': false,
+		    'global': false,
+		    'url': "./fonts.json",
+		    'dataType': "json",
+		    'success': function(data) {
+		      json = data;
+		    }
+		  });
+		  return json;
+		})();
+		}
+	function font_add_more(){
+		nowFontCount++;
+		$("#font_panel_input_div").append('<div id="div_adj'+nowFontCount+'" class="flex-center">&nbsp;&nbsp;&nbsp;&nbsp;<span> support '+ (nowFontCount-1) +' </span>&nbsp;&nbsp;<div class="autocomplete" style="width:150px;"><input id="adj'+nowFontCount+'" type="text" placeholder="Enter Adjective"></div></div>');
+		var id = "adj"+nowFontCount;
+		autocomplete(document.getElementById(id), Adjectives);
 	}
-
 	var Adjectives = ["amusing","approachable","artistic","authentic","balanced","basic", "bold","breezy","bubbly","calm","carefree","casual","charming","cheerful","chic","classic","classy","clean","clever","comic","confident","conservative","contemporary","corporate","courageous","cultured","cute","creative","daring","dashing","debonair","delightful","detailed","direct","distinguished","dynamic","earthy","eccentric","edgy","efficient","elegant","endearing","energetic","established","ethereal","exciting","expressive","exuberant","familiar","fashionable","fearless","feminine","festive","flirty","formal","frank","free","fresh","friendly","fresh","fun","funky","futuristic","gentle","glamorous","happy","heavy","helpful","informal","irreverent","intellectual","intentional","inspiring","lighthearted","lively","low maintenance","loyal","masculine","mature","mellow","memorable","midcentury","mischevious","modern","nostalgic","opulent","original","playful","pleasant","posh","proud","punchy","quaint","quirky","relaxing","retro","romantic","rough","rustic","sassy","serious","shrewd","simple","sincere","sleek","sophisticated","sporty","standard","striking","strong","stylish","sublime","subtle","subversive","swanky","technical","timeless","traditional","trustworthy","unconventional","untraditional","urban","victorian","vintage","visionary","warm","whimsical","witty","youthful"];
 
 
-	autocomplete(document.getElementById("support_adj1"), Adjectives);
-	autocomplete(document.getElementById("support_adj2"), Adjectives);
-	autocomplete(document.getElementById("support_adj3"), Adjectives);
-	autocomplete(document.getElementById("support_adj4"), Adjectives);
+	autocomplete(document.getElementById("adj1"), Adjectives);
+	
 
 	function draw(){
 
@@ -405,7 +296,8 @@
 		        }
 		      }
 		  });
-		  function addActive(x) {
+		  function addActive(x) 
+		  {
 		    /*a function to classify an item as "active":*/
 		    if (!x) return false;
 		    /*start by removing the "active" class on all items:*/
@@ -430,11 +322,11 @@
 		      x[i].parentNode.removeChild(x[i]);
 		    }
 		  }
-		}
+		 }
 		/*execute a function when someone clicks in the document:*/
 		document.addEventListener("click", function (e) {
 		    closeAllLists(e.target);
 		});
-		}
+	}
 </script>
 </html>

@@ -1,0 +1,25 @@
+
+//var Adjectives = ["amusing","approachable","artistic","authentic","balanced","basic", "bold","breezy","bubbly","calm","carefree","casual","charming","cheerful","chic","classic","classy","clean","clever","comic","confident","conservative","contemporary","corporate","courageous","cultured","cute","creative","daring","dashing","debonair","delightful","detailed","direct","distinguished","dynamic","earthy","eccentric","edgy","efficient","elegant","endearing","energetic","established","ethereal","exciting","expressive","exuberant","familiar","fashionable","fearless","feminine","festive","flirty","formal","frank","free","fresh","friendly","fresh","fun","funky","futuristic","gentle","glamorous","happy","heavy","helpful","informal","irreverent","intellectual","intentional","inspiring","lighthearted","lively","low maintenance","loyal","masculine","mature","mellow","memorable","midcentury","mischevious","modern","nostalgic","opulent","original","playful","pleasant","posh","proud","punchy","quaint","quirky","relaxing","retro","romantic","rough","rustic","sassy","serious","shrewd","simple","sincere","sleek","sophisticated","sporty","standard","striking","strong","stylish","sublime","subtle","subversive","swanky","technical","timeless","traditional","trustworthy","unconventional","untraditional","urban","victorian","vintage","visionary","warm","whimsical","witty","youthful"];
+
+[
+	{
+		 "font"		: "Modak",
+		 "primary"	: "bubbly",
+		 "support"	: [ "youthful","heavy", "cute", "exuberant"],
+		 "paired"	:["Lato","Roboto"],
+		 "style" 	: "display"
+	},
+	 {	 "font" 	: "Galada",
+		 "primary"	: "retro",
+		 "support"	: [ "elegant","vintage"],
+		 "paired"	:["Lato","Roboto"],
+		 "style" 	: "display"
+	},
+	{
+		 "font"   	: "Source Sans Pro",
+		 "primary"	: "clean",
+		 "support"	: [ "familiar","friendly", "efficient", "loyal"],
+		 "paired"	:[],
+		 "style" 	: "body"
+	},
+]
