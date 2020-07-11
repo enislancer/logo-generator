@@ -1,25 +1,796 @@
-
-//var Adjectives = ["amusing","approachable","artistic","authentic","balanced","basic", "bold","breezy","bubbly","calm","carefree","casual","charming","cheerful","chic","classic","classy","clean","clever","comic","confident","conservative","contemporary","corporate","courageous","cultured","cute","creative","daring","dashing","debonair","delightful","detailed","direct","distinguished","dynamic","earthy","eccentric","edgy","efficient","elegant","endearing","energetic","established","ethereal","exciting","expressive","exuberant","familiar","fashionable","fearless","feminine","festive","flirty","formal","frank","free","fresh","friendly","fresh","fun","funky","futuristic","gentle","glamorous","happy","heavy","helpful","informal","irreverent","intellectual","intentional","inspiring","lighthearted","lively","low maintenance","loyal","masculine","mature","mellow","memorable","midcentury","mischevious","modern","nostalgic","opulent","original","playful","pleasant","posh","proud","punchy","quaint","quirky","relaxing","retro","romantic","rough","rustic","sassy","serious","shrewd","simple","sincere","sleek","sophisticated","sporty","standard","striking","strong","stylish","sublime","subtle","subversive","swanky","technical","timeless","traditional","trustworthy","unconventional","untraditional","urban","victorian","vintage","visionary","warm","whimsical","witty","youthful"];
-
-[
-	{
+{
+	"Modak": {
 		 "font"		: "Modak",
 		 "primary"	: "bubbly",
 		 "support"	: [ "youthful","heavy", "cute", "exuberant"],
 		 "paired"	:["Lato","Roboto"],
 		 "style" 	: "display"
 	},
-	 {	 "font" 	: "Galada",
+	"Galada":  {	
+		 "font" 	: "Galada",
 		 "primary"	: "retro",
 		 "support"	: [ "elegant","vintage"],
 		 "paired"	:["Lato","Roboto"],
 		 "style" 	: "display"
 	},
-	{
+	"Source Sans Pro": {
 		 "font"   	: "Source Sans Pro",
 		 "primary"	: "clean",
 		 "support"	: [ "familiar","friendly", "efficient", "loyal"],
 		 "paired"	:[],
 		 "style" 	: "body"
 	},
-]
+	"Lato": {
+		 "font"   	: "Lato",
+		 "primary"	: "familiar",
+		 "support"	: [ "standard","efficient", "corporate", "friendly"],
+		 "paired"	:[],
+		 "style" 	: "body"
+	},
+	"Montserrat": {
+		 "font"   	: "Montserrat",
+		 "primary"	: "clean",
+		 "support"	: [ "confident","basic", "urban", "familiar"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "body"
+	},
+	"Bangers": {
+		 "font"   	: "Bangers",
+		 "primary"	: "comic",
+		 "support"	: [ "punchy","midcentury", "dashing"],
+		 "paired"	:[],
+		 "style" 	: "display"
+	},
+	"Fondamento": {
+		 "font"   	: "Fondamento",
+		 "primary"	: "victorian",
+		 "support"	: [ "elegant","traditional", "established"],
+		 "paired"	:["Source Sans Pro", "Lato"],
+		 "style" 	: "display"
+	},
+	"Raleway": {
+		 "font"   	: "Raleway",
+		 "primary"	: "elegant",
+		 "support"	: [ "clean","modern", "delightful", "fresh"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "body"
+	},
+	"Oswald": {
+		 "font"   	: "Oswald",
+		 "primary"	: "classic",
+		 "support"	: [ "bold","modern", "dynamic"],
+		 "paired"	:["Lato", "Poppins"],
+		 "style" 	: "display"
+	},
+	"Roboto Condensed": {
+		 "font"   	: "Roboto Condensed",
+		 "primary"	: "clean",
+		 "support"	: [ "modern","masculine", "friendly"],
+		 "paired"	:["Source Sans Pro", "Roboto"],
+		 "style" 	: "display"
+	},
+	"Roboto": {
+		 "font"   	: "Roboto",
+		 "primary"	: "fresh",
+		 "support"	: [ "familiar", "friendly", "standard", "fearless"],
+		 "paired"	:[],
+		 "style" 	: "body"
+	},
+	"Merriweather": {
+		 "font"   	: "Merriweather",
+		 "primary"	: "loyal",
+		 "support"	: [ "pleasant", "subversive", "established"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "body",
+		 "extra"	: "serif"
+	},
+	"Roboto Slab": {
+		 "font"   	: "Roboto Slab",
+		 "primary"	: "masculine",
+		 "support"	: [ "retro", "traditional", "intellectual"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "body"
+	},
+	"Poppins": {
+		 "font"   	: "Poppins",
+		 "primary"	: "masculine",
+		 "support"	: [ "cheerful", "clean", "delightful", "original"],
+		 "paired"	:["Roboto", "Playfair"],
+		 "style" 	: "body"
+	},
+	"Playfair Display": {
+		 "font"   	: "Playfair Display",
+		 "primary"	: "classy",
+		 "support"	: [ "posh", "traditional", "fashionable", "cultured"],
+		 "paired"	:["Roboto", "Lato"],
+		 "style" 	: "display",
+		 "extra"	: "serif"
+	},
+	"Yellowtail": {
+		 "font"   	: "Yellowtail",
+		 "primary"	: "free",
+		 "support"	: [ "bold", "helpful", "swanky"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Lora": {
+		 "font"   	: "Lora",
+		 "primary"	: "classic",
+		 "support"	: [ "balanced", "familiar", "corporate", "memorable"],
+		 "paired"	:["Roboto", "Lato"],
+		 "style" 	: "body",
+		 "extra"	: "serif"
+	},
+	"Quicksand": {
+		 "font"   	: "Quicksand",
+		 "primary"	: "youthful",
+		 "support"	: [ "fresh", "clean", "casual", "friendly"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Barlow Condensed": {
+		 "font"   	: "Barlow Condensed",
+		 "primary"	: "confident",
+		 "support"	: [ "casual", "masculine", "punchy", "fashionable"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Crimson Text": {
+		 "font"   	: "Crimson Text",
+		 "primary"	: "traditional",
+		 "support"	: [ "loyal", "established", "rustic", "intellectual"],
+		 "paired"	:["Open Sans", "Source Sans Pro"],
+		 "style" 	: "body"
+	},
+	"Bebas Neue": {
+		 "font"   	: "Bebas Neue",
+		 "primary"	: "dynamic",
+		 "support"	: [ "punchy", "bold", "modern", "masculine"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Fjalla One": {
+		 "font"   	: "Fjalla One",
+		 "primary"	: "modern",
+		 "support"	: [ "bold", "masculine", "daring", "unconventional"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Indie Flower": {
+		 "font"   	: "Indie Flower",
+		 "primary"	: "youthful",
+		 "support"	: [ "carefree", "bubbly"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Dancing Script": {
+		 "font"   	: "Dancing Script",
+		 "primary"	: "lively",
+		 "support"	: [ "casual", "feminine","gentle", "endearing"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display"
+	},
+	"IBM Plex serif": {
+		 "font"   	: "IBM Plex serif",
+		 "primary"	: "familiar",
+		 "support"	: [ "sleek", "classy","mature", "modern"],
+		 "paired"	:["Roboto","Lato"],
+		 "style" 	: "body",
+		 "extra"	: "serif"
+	},
+	"Permanent Marker": {
+		 "font"   	: "Permanent Marker",
+		 "primary"	: "frank",
+		 "support"	: [ "fun", "bold","low maintenance", "punchy"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Amatic SC": {
+		 "font"   	: "Amatic SC",
+		 "primary"	: "charming",
+		 "support"	: [ "youthful", "lively","simple"],
+		 "paired"	:["Open Sans", "Roboto"],
+		 "style" 	: "display"
+	},
+	"Merienda One": {
+		 "font"   	: "Merienda One",
+		 "primary"	: "flirty",
+		 "support"	: [ "confident", "bold","pleasant", "elegant"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Righteous": {
+		 "font"   	: "Righteous",
+		 "primary"	: "loyal",
+		 "support"	: [ "retro", "quaint","conservative", "direct"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Caveat": {
+		 "font"   	: "Caveat",
+		 "primary"	: "casual",
+		 "support"	: [ "quaint", "whimsical","youthful", "relaxing"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Satisfy": {
+		 "font"   	: "Satisfy",
+		 "primary"	: "fashionable",
+		 "support"	: [ "sleek", "timeless","striking", "modern"],
+		 "paired"	:["Raleway", "Lato"],
+		 "style" 	: "display"
+	},
+	"News Cycle": {
+		 "font"   	: "New Cycle",
+		 "primary"	: "modern",
+		 "support"	: [ "familiar", "trustworthy","casual"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "body"
+	},
+	"Great Vibes": {
+		 "font"   	: "Great Vibes",
+		 "primary"	: "romantic",
+		 "support"	: [ "classic", "festive","friendly"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Arapey": {
+		 "font"   	: "Arapey",
+		 "primary"	: "glamorous",
+		 "support"	: [ "elegant", "romantic","distinguished", "contemporary"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Special Elite": {
+		 "font"   	: "Special Elite",
+		 "primary"	: "urban",
+		 "support"	: [ "mischevious", "retro","vintage"],
+		 "paired"	:["Roboto Condensed", "Oswald"],
+		 "style" 	: "display"
+	},
+	"Vidaloka": {
+		 "font"   	: "Vidaloka",
+		 "primary"	: "playful",
+		 "support"	: [ "debonair", "youthful","inspirational", "fun"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+		 
+	},
+	"Philosopher": {
+		 "font"   	: "Philosopher",
+		 "primary"	: "timeless",
+		 "support"	: [ "unconventional", "whimsical","swanky", "detailed"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display",
+		 "extra"	: "serif"
+	},
+	"Staatliches": {
+		 "font"   	: "Staatliches",
+		 "primary"	: "masculine",
+		 "support"	: [ "technical", "youthful","plucky", "charming"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Unica One": {
+		 "font"   	: "Unica One",
+		 "primary"	: "funky",
+		 "support"	: [ "casual", "flirty","endearing"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Bad Script": {
+		 "font"   	: "Bad Script",
+		 "primary"	: "casual",
+		 "support"	: [ "clean", "friendly","careful"],
+		 "paired"	:["Raleway"],
+		 "style" 	: "display"
+	},
+	"Homemade Apple": {
+		 "font"   	: "Homemade Apple",
+		 "primary"	: "trustworthy",
+		 "support"	: [ "casual", "comforting","relaxing", "endearing"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display"
+	},
+	"Playball": {
+		 "font"   	: "Playball",
+		 "primary"	: "casual",
+		 "support"	: [ "sporty", "retro","festive"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Rock Salt": {
+		 "font"   	: "Rock Salt",
+		 "primary"	: "casual",
+		 "support"	: [ "sporty", "masculine"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Fugaz One": {
+		 "font"   	: "Fugaz One",
+		 "primary"	: "bold",
+		 "support"	: [ "youthful", "low maintenance", "direct"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Pinyon Script": {
+		 "font"   	: "Pinyon Script",
+		 "primary"	: "elegant",
+		 "support"	: [ "classy", "confident", "trustworthy", "striking"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Meera Inimai": {
+		 "font"   	: "Meera Inimai",
+		 "primary"	: "striking",
+		 "support"	: [ "traditional", "familiar", "modern"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "body"
+	},
+	"Cabin Sketch": {
+		 "font"   	: "Cabin Sketch",
+		 "primary"	: "casual",
+		 "support"	: [ "bold", "youthful", "plucky"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Syncopate": {
+		 "font"   	: "Syncopate",
+		 "primary"	: "confident",
+		 "support"	: [ "casual", "masculine", "modern", "plucky"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Cinzel Decorative": {
+		 "font"   	: "Cinzel Decorative",
+		 "primary"	: "fashionable",
+		 "support"	: [ "classy", "confident" ,"trustworthy"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Chelsea market": {
+		 "font"   	: "Chelsea market",
+		 "primary"	: "unconventional",
+		 "support"	: [ "cute", "youthful", "casual"],
+		 "paired"	:["Oswald"]
+		 
+	},
+	"Pompiere": {
+		 "font"   	: "Pompiere",
+		 "primary"	: "whimsical",
+		 "support"	: [ "determined", "contemporary", "casual"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Calligraffitti": {
+		 "font"   	: "Calligraffitti",
+		 "primary"	: "creative",
+		 "support"	: [ "feminine", "whimsical", "carefree"],
+		 "paired"	:["Source Sans Pro", "Roboto"],
+		 "style" 	: "display"
+	},
+	"Nixie One": {
+		 "font"   	: "Nixie One",
+		 "primary"	: "casual",
+		 "support"	: [ "stylish", "creative", "pleasant"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Kristi": {
+		 "font"   	: "Kristi",
+		 "primary"	: "feminine",
+		 "support"	: [ "creative", "stylish", "romantic", "delightful"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Petit Formal Script": {
+		 "font"   	: "Petit Formal Script",
+		 "primary"	: "feminine",
+		 "support"	: [ "classic", "timeless", "traditional", "elegant"],
+		 "paired"	:["Montserrat", "Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Cherry Swash": {
+		 "font"   	: "Cherry Swash",
+		 "primary"	: "retro",
+		 "support"	: [ "nostalgic", "feminine", "expressive", "contemporary"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Meddon": {
+		 "font"   	: "Meddon",
+		 "primary"	: "stylish",
+		 "support"	: [ "debonair", "intentional", "artistic"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Krona One": {
+		 "font"   	: "Krona One",
+		 "primary"	: "daring",
+		 "support"	: [ "youthful", "confident", "direct", "mellow"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Gotu": {
+		 "font"   	: "Gotu",
+		 "primary"	: "elegant",
+		 "support"	: [ "quaint", "striking", "opulent"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Big Shoulders Text": {
+		 "font"   	: "Big Shoulders Text",
+		 "primary"	: "strong",
+		 "support"	: [ "serious", "proud", "inspiring", "edgy"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Ribeye Marrow": {
+		 "font"   	: "Ribeye Marrow",
+		 "primary"	: "playful",
+		 "support"	: [ "irreverent", "cheerful", "festive", "casual"],
+		 "paired"	:["Source Sans Pro", "Oswald"],
+		 "style" 	: "display"
+	},
+	"IM Fell English SC": {
+		 "font"   	: "IM Fell English SC",
+		 "primary"	: "rough",
+		 "support"	: [ "striking", "shrewd", "eccentric", "mystical"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display"
+	},
+	"Averia Libre": {
+		 "font"   	: "Averia Libre",
+		 "primary"	: "ethereal",
+		 "support"	: [ "earthy", "artistic", "sublime", "feminine"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Spirax": {
+		 "font"   	: "Spirax",
+		 "primary"	: "cute",
+		 "support"	: [ "playful", "clever", "feminine"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Hepta Slab": {
+		 "font"   	: "Hepta Slab",
+		 "primary"	: "sincere",
+		 "support"	: [ "familiar", "direct", "casual"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Rationale One": {
+		 "font"   	: "Rationale One",
+		 "primary"	: "futuristic",
+		 "support"	: [ "daring", "strong", "technical","intentional"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display"
+	},
+	"Englebert": {
+		 "font"   	: "Englebert",
+		 "primary"	: "casual",
+		 "support"	: [ "playful", "memorable", "cheerful"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display"
+	},
+	"Mate SC": {
+		 "font"   	: "Mate SC",
+		 "primary"	: "warm",
+		 "support"	: [ "unconventional", "stylish", "traditional", "striking"],
+		 "paired"	:["Source Sans Pro"]
+		 
+	},
+	"Amarante": {
+		 "font"   	: "Amarante",
+		 "primary"	: "unconventional",
+		 "support"	: [ "bold", "serious", "eccentric"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Lovers Quarrel": {
+		 "font"   	: "Lovers Quarrel",
+		 "primary"	: "romantic",
+		 "support"	: [ "classy", "clean", "expressive"],
+		 "paired"	:["Raleway"],
+		 "style" 	: "display"
+	},
+	"Kite One": {
+		 "font"   	: "Kite One",
+		 "primary"	: "visionary",
+		 "support"	: [ "youthful", "lighthearted", "exciting","earthy"],
+		 "paired"	:["Open Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Henny Penny": {
+		 "font"   	: "Henny Penny",
+		 "primary"	: "cheerful",
+		 "support"	: [ "irreverent", "strong", "amusing"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display"
+	},
+	"Milonga": {
+		 "font"   	: "Milonga",
+		 "primary"	: "expressive",
+		 "support"	: [ "elegant", "artistic", "unconventional", "charming"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Crushed": {
+		 "font"   	: "Crushed",
+		 "primary"	: "untraditional",
+		 "support"	: [ "youthful", "expressive", "bold"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display"
+	},
+	"Sarina": {
+		 "font"   	: "Sarina",
+		 "primary"	: "bold",
+		 "support"	: [ "casual", "lighthearted", "confident"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Monsieur La Doulaise": {
+		 "font"   	: "Monsieur La Doulaise",
+		 "primary"	: "posh",
+		 "support"	: [ "classy", "elegant", "traditional"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Italiana": {
+		 "font"   	: "Italiana",
+		 "primary"	: "elegant",
+		 "support"	: [ "sophisticated", "breezy", "happy"],
+		 "paired"	:["open Sans"],
+		 "style" 	: "display"
+	},
+	"Ribeye": {
+		 "font"   	: "Ribeye",
+		 "primary"	: "lively",
+		 "support"	: [ "sassy","cheerful", "festive", "casual"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Ranga": {
+		 "font"   	: "Ranga",
+		 "primary"	: "subtle",
+		 "support"	: [ "visionary","courageous", "striking"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Text Me One": {
+		 "font"   	: "text Me One",
+		 "primary"	: "subversive",
+		 "support"	: [ "unconventional","technical", "intentional", "approachable"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Buda": {
+		 "font"   	: "Buda",
+		 "primary"	: "balanced",
+		 "support"	: [ "classy","visionary", "clever"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Cormorant Unicase": {
+		 "font"   	: "Cormorant Unicase",
+		 "primary"	: "informal",
+		 "support"	: [ "pleasant","retro", "lighthearted", "feminine"],
+		 "paired"	:["Open Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Barriecito": {
+		 "font"   	: "Barriecito",
+		 "primary"	: "casual",
+		 "support"	: [ "funky","friendly", "authentic", "charming"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Paprika": {
+		 "font"   	: "Paprika",
+		 "primary"	: "friendly",
+		 "support"	: [ "approachable","pleasant", "classy"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Glass Antiqua": {
+		 "font"   	: "Glass Antiqua",
+		 "primary"	: "informal",
+		 "support"	: [ "pleasant","retro", "lighthearted", "feminine"],
+		 "paired"	:["Open Sans Pro"],
+		 "style" 	: "display"
+	},
+	"Major Mono Display": {
+		 "font"   	: "Mojor Moono Display",
+		 "primary"	: "funky",
+		 "support"	: [ "eccentric","sassy", "direct", "playful"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display"
+	},
+	"Vibes": {
+		 "font"   	: "Vibes",
+		 "primary"	: "cute",
+		 "support"	: [ "energetic","flexible", "feminine", "bubbly"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display"
+	},
+	"Margarine": {
+		 "font"   	: "Margarine",
+		 "primary"	: "bubbly",
+		 "support"	: [ "youthful","cute", "strong", "warm"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display"
+	},
+	"South Castle": {
+		 "font"   	: "South Castle",
+		 "primary"	: "expressive",
+		 "support"	: [ "friendly","feminine", "casual"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Estelly": {
+		 "font"   	: "Estelly",
+		 "primary"	: "feminine",
+		 "support"	: [ "informal","lighthearted", "bubbly"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Ochre Script": {
+		 "font"   	: "Ochre Script",
+		 "primary"	: "elegant",
+		 "support"	: [ "pretty","charming", "feminine", "unconventional"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Oyget": {
+		 "font"   	: "Oyget",
+		 "primary"	: "striking",
+		 "support"	: [ "direct","informal", "masculine"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Flora Sent": {
+		 "font"   	: "Flora Sent",
+		 "primary"	: "feminine",
+		 "support"	: [ "striking","sassy", "quirky", "cute"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Resotho": {
+		 "font"   	: "Resotho",
+		 "primary"	: "strong",
+		 "support"	: [ "masculine","direct", "trustworthy"],
+		 "paired"	:["Roboto"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Roam": {
+		 "font"   	: "Roam",
+		 "primary"	: "classic",
+		 "support"	: [ "vintage","elegant", "chic"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Old Wood": {
+		 "font"   	: "Old Wood",
+		 "primary"	: "warm",
+		 "support"	: [ "funky","retro", "strong"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Gallardo": {
+		 "font"   	: "Gallardo",
+		 "primary"	: "strong",
+		 "support"	: [ "friendly","courageous", "energetic"],
+		 "paired"	:["Montserrat"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Summer Vibes": {
+		 "font"   	: "Summer Vibes",
+		 "primary"	: "friendly",
+		 "support"	: [ "approachable","casual", "pleasant", "youthful"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Canteen BN": {
+		 "font"   	: "Canteen BN",
+		 "primary"	: "strong",
+		 "support"	: [ "traditional","retro", "approachable", "masculine"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"High Summit": {
+		 "font"   	: "High Summit",
+		 "primary"	: "casual",
+		 "support"	: [ "feminine","lighthearted", "calm"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Blatant": {
+		 "font"   	: "Blatant",
+		 "primary"	: "youthful",
+		 "support"	: [ "bold","funky", "friendly"],
+		 "paired"	:["Montserrat"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Ballet Script": {
+		 "font"   	: "Ballet Script",
+		 "primary"	: "elegant",
+		 "support"	: [ "feminine","retro", "formal", "classy"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Blacker Sans Pro Light": {
+		 "font"   	: "Blacker Sans Pro Light",
+		 "primary"	: "clean",
+		 "support"	: [ "trustworthy","direct", "visionary", "retro"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "body",
+		 "extra"	: "fontesk"
+	},
+	"Open Heart": {
+		 "font"   	: "Open Heart",
+		 "primary"	: "friendly",
+		 "support"	: [ "approachable","feminine", "natural"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Cellad": {
+		 "font"   	: "Cellad",
+		 "primary"	: "youthful",
+		 "support"	: [ "expressive","casual", "approachable"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+
+	"Dexotic": {
+		 "font"   	: "Dexotic",
+		 "primary"	: "daring",
+		 "support"	: [ "direct","casual", "masculine", "striking"],
+		 "paired"	:["Open Sans"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+
+	"Rosseta": {
+		 "font"   	: "Rosseta",
+		 "primary"	: "sophisticated",
+		 "support"	: [ "vintage","elegant", "classic"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+	"Dacha Pro": {
+		 "font"   	: "Dacha Pro",
+		 "primary"	: "lighthearted",
+		 "support"	: [ "approachable", "funky"],
+		 "paired"	:["Source Sans Pro"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	},
+
+	"England Script": {
+		 "font"   	: "England Script",
+		 "primary"	: "elegant",
+		 "support"	: [ "classy","casual", "feminine", "friendly"],
+		 "paired"	:["Lato"],
+		 "style" 	: "display",
+		 "extra"	: "fontesk"
+	}
+
+}
