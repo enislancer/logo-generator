@@ -66,10 +66,17 @@
 		</div>
 		<div class="flex-center" id="font_panel_input_div" style="margin: 10px;">
 			<div id="div_adj1" class="flex-center">
-				<span> Input </span>&nbsp;&nbsp;
+				<span> Primary </span>&nbsp;&nbsp;
 				 <div class="autocomplete" style="width:150px;">
 					
 					<input id="adj1" class="font_input" type="text" name="adj1" placeholder="Enter Adjective">
+				</div>	
+			</div>
+			<div id="div_adj2" class="flex-center">
+				&nbsp;&nbsp;&nbsp;&nbsp;<span> Support1 </span>&nbsp;&nbsp;
+				 <div class="autocomplete" style="width:150px;">
+					
+					<input id="adj2" class="font_input" type="text" name="adj2" placeholder="Enter Adjective">
 				</div>	
 			</div>
 		</div>
@@ -91,8 +98,31 @@
 		<div class="flex-center">
 			<h2>Graphic Panel</h2>	
 		</div>
-		<div class="flex-center" style="margin: 10px;">
-			<h1><h1>
+		<div class="flex-center" id="graphic_panel_input_div" style="margin: 10px;">
+			<div id="div_adj1" class="flex-center">
+				<span> Primary </span>&nbsp;&nbsp;
+				 <div class="autocomplete" style="width:150px;">
+					
+					<input id="graphic_adj1" class="graphic_input" type="text" name="adj1" placeholder="Enter Adjective">
+				</div>	
+			</div>
+			<div id="div_adj2" class="flex-center">
+				&nbsp;&nbsp;&nbsp;&nbsp;<span> Support1 </span>&nbsp;&nbsp;
+				 <div class="autocomplete" style="width:150px;">
+					
+					<input id="graphic_adj2" class="graphic_input" type="text" name="adj2" placeholder="Enter Adjective">
+				</div>	
+			</div>
+		</div>
+
+
+		<div class="flex-center" style="margin-top: 10px;">
+			<button class="btn-primary" onclick="graphic_add_more();">
+				ADD	More
+			</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button class="btn-primary" onclick="selectGraphic();">
+				input Done
+			</button>
 		</div>
 
 	</div>
@@ -135,9 +165,11 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-	var nowFontCount = 1;
-	var input_fonts_array = [];
+	var nowFontCount = 2;
+	var nowGraphicCount = 2;
+	
 	var fonts_Json_data;
+	var graphicss_Json_data;
 	function loadJSON(url, callback)
 	{   
 
@@ -156,27 +188,199 @@
 
 
 	function selectFont(){
-		
+		var input_fonts_array = [];
 		 loadJSON('fonts.json',function(response) {
 		  // Parse JSON string into object
 	     fonts_Json_data = JSON.parse(response);                 // get json object
 	     $( ".font_input" ).each(function( index ) {
 		   input_fonts_array.push($( this ).val());
 		 });
+	     proper_index_array = chooseRightManner(input_fonts_array, fonts_Json_data);
 
-		  //  console.log(Object.keys(fonts_data).length);            // get length
 
-		 var keysbyindex = Object.keys(fonts_Json_data);
+	     var keysbyindex = Object.keys(fonts_Json_data);
 		  //console.log(fonts_Json_data[keysbyindex[1]]['support']);
-		  
-		 console.log(input_fonts_array);
-		 //for (var i=0; i<keysbyindex.length; i++)
-		 //   console.log(i+1,fonts_Json_data[keysbyindex[i]]);
+	     if (proper_index_array.length < 2) 
+	     {
+	     	var index = proper_index_array[0];
+	     	alert("we recommend the font as following : " + keysbyindex[index]);
+	     }
+	     else{
+	     	var recomment_strings = "";
+	     	for(var k = 0; k<proper_index_array.length; k++)
+	     	{
+	     		var index = proper_index_array[k];
+	     		recomment_strings += keysbyindex[index];
+	     		if (k != proper_index_array.length-1) {
+	     			recomment_strings += " , ";	
+	     		}
+	     		
+	     	}
 
+	     	alert("we recommend the font as following : " + recomment_strings + "\n You can select one of these.");
+	     }
+		  
 		 });
 	}
+	function selectGraphic(){
+	 var input_graphics_array = [];
+	 loadJSON('graphics.json',function(response) {
+	  // Parse JSON string into object
+     graphicss_Json_data = JSON.parse(response);                 // get json object
+     $( ".graphic_input" ).each(function( index ) {
+	   input_graphics_array.push($( this ).val());
+	 });
+     proper_index_array = chooseRightManner(input_graphics_array, graphicss_Json_data);
 
 
+     var keysbyindex = Object.keys(graphicss_Json_data);
+	  //console.log(fonts_Json_data[keysbyindex[1]]['support']);
+     if (proper_index_array.length < 2) 
+     {
+     	var index = proper_index_array[0];
+     	alert("we recommend the graphic as following : " + keysbyindex[index]);
+     }
+     else{
+     	var recomment_strings = "";
+     	for(var k = 0; k<proper_index_array.length; k++)
+     	{
+     		var index = proper_index_array[k];
+     		recomment_strings += keysbyindex[index];
+     		if (k != proper_index_array.length-1) {
+     			recomment_strings += " , ";	
+     		}
+     		
+     	}
+
+     	alert("we recommend the graphic as following : " + recomment_strings + "\n You can select one of these.");
+     }
+	  
+	 });
+    }
+
+	function chooseRightManner(InputArray, JsonData){
+		var rc_index_Array = [];
+		var rc_count_forIndex_Array = [];
+		var primary_matched_count = 0;
+		realSupportLength  = 0;
+
+		 console.log(Object.keys(JsonData).length);            // get length
+
+		 var keysbyindex = Object.keys(JsonData);
+		  //console.log(fonts_Json_data[keysbyindex[1]]['support']);
+		  
+		 console.log(InputArray);
+
+		 var Primary_input = InputArray[0];
+
+		 for(var i = 1; i<InputArray.length; i++)
+		 {
+		 	if (InputArray[i] != "") {
+		 		realSupportLength++;
+		 	}
+		 }
+
+
+
+		 for (var i=0; i<keysbyindex.length; i++)                //loop for each json data
+		 {
+		 	var eachObject = JsonData[keysbyindex[i]];
+
+		 	if (Primary_input.includes(eachObject['primary']))  //matching primary
+		 	{
+		 		console.log("primary matching - ", i, eachObject);
+		 		rc_index_Array.push(i);    //save index of matched json data
+		 		
+		 		var eachObject_support_array = eachObject['support'];
+
+		 		var matched_support_count = 0;		
+		 		
+		 		for(var input_index = 1; input_index < InputArray.length; input_index ++)
+		 		{
+		 			var support_input = InputArray[input_index];
+		 			
+		 			//console.log("support_input - ", support_input);
+		 			if(support_input != ""){
+		 				for(var k = 0; k < eachObject_support_array.length; k++){
+			 				if( support_input.includes(eachObject_support_array[k])) 
+			 				{
+			 					//console.log("eachObject_support - ", eachObject_support_array[k]);
+			 					matched_support_count ++;
+			 				}
+		 				}
+		 			}
+		 			
+
+		 		}
+		 		rc_count_forIndex_Array.push(matched_support_count * 50 / realSupportLength + 50);   //matched percent
+
+		 		primary_matched_count++;
+		 	}
+		 }
+
+		 if (!primary_matched_count)                  //No matching primary
+		 {
+		 	console.log("No matching primary ... so start finding all support");
+
+		 	for(var index = 0; index < keysbyindex.length; index++ )
+		 	{
+		 		var eachObject = JsonData[keysbyindex[index]];
+
+		 		var eachObject_support_array = eachObject['support'];
+
+		 		var matched_support_count = 0;		
+
+		 		for(var input_index = 0; input_index < InputArray.length; input_index ++)    //search with all input
+		 		{
+		 			var input = InputArray[input_index];
+		 			
+		 			
+		 			if(input != "")            ////////////////////////////////////////////////////////////////
+		 			{ 
+		 				for(var k = 0; k < eachObject_support_array.length; k++)
+		 				{
+			 				if( input.includes(eachObject_support_array[k])) 
+			 				{
+			 					
+			 					matched_support_count ++;
+			 				}
+		 				}
+		 			}
+		 			
+		 		}
+		 		if (matched_support_count != 0) {
+		 			console.log(eachObject);
+		 			rc_index_Array.push(index);
+		 			rc_count_forIndex_Array.push(matched_support_count * 50 / (realSupportLength + 1));
+		 		}
+		 	}
+
+		 }
+		 console.log("recommend index array - ", rc_index_Array);
+		 console.log("recommend count for index array - ", rc_count_forIndex_Array);
+
+		 var max_value = rc_count_forIndex_Array[0];
+
+		 for(var k = 1; k<rc_count_forIndex_Array.length; k++)
+		 {
+		 	if (max_value < rc_count_forIndex_Array[k]) {
+		 		max_value = rc_count_forIndex_Array[k];
+
+		 	}
+		 }
+
+		 return_index_array = [];
+		 for(var k = 0; k < rc_index_Array.length;k++)
+		 {
+		 	if (rc_count_forIndex_Array[k] == max_value) {
+		 		return_index_array.push(rc_index_Array[k]);
+		 	}
+		 }
+		 
+		 return return_index_array;
+		    
+
+	}
 
 
 	function font_add_more(){
@@ -185,15 +389,21 @@
 		var id = "adj"+nowFontCount;
 		autocomplete(document.getElementById(id), Adjectives);
 	}
-
-
-
+	function graphic_add_more(){
+		nowGraphicCount++;
+		$("#graphic_panel_input_div").append('<div id="div_adj'+nowGraphicCount+'" class="flex-center">&nbsp;&nbsp;&nbsp;&nbsp;<span> support '+ (nowGraphicCount-1) +' </span>&nbsp;&nbsp;<div class="autocomplete" style="width:150px;"><input id="graphic_adj'+nowGraphicCount+'" class="graphic_input" type="text" placeholder="Enter Adjective"></div></div>');
+		var id = "graphic_adj"+nowGraphicCount;
+		autocomplete(document.getElementById(id), Adjectives);
+	}
 
 
 	var Adjectives = ["amusing","approachable","artistic","authentic","balanced","basic", "bold","breezy","bubbly","calm","carefree","careful","casual","charming","cheerful","chic","classic","classy","clean","clever","comforting","comic","confident","conservative","contemporary","corporate","courageous","cultured","cute","creative","daring","dashing","debonair","delightful","detailed","determined","direct","distinguished","dynamic","earthy","eccentric","edgy","efficient","elegant","endearing","energetic","established","ethereal","exciting","expressive","exuberant","familiar","fashionable","fearless","feminine","festive","flexible","flirty","formal","frank","free","fresh","friendly","fresh","fun","funky","futuristic","gentle","glamorous","happy","heavy","helpful","informal","irreverent","intellectual","intentional","inspiring","inspirational","lighthearted","lively","low maintenance","loyal","masculine","mature","mellow","memorable","midcentury","mischevious","modern","mystical","natural","nostalgic","opulent","original","playful","pleasant","plucky","posh","pretty","proud","punchy","quaint","quirky","relaxing","retro","romantic","rough","rustic","sassy","serious","shrewd","simple","sincere","sleek","sophisticated","sporty","standard","striking","strong","stylish","sublime","subtle","subversive","swanky","technical","timeless","traditional","trustworthy","unconventional","untraditional","urban","victorian","vintage","visionary","warm","whimsical","witty","youthful"];
 
 
 	autocomplete(document.getElementById("adj1"), Adjectives);
+	autocomplete(document.getElementById("adj2"), Adjectives);
+	autocomplete(document.getElementById("graphic_adj1"), Adjectives);
+	autocomplete(document.getElementById("graphic_adj2"), Adjectives);
 	
 
 	function draw(){

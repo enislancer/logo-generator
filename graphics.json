@@ -1,0 +1,43 @@
+
+{
+	"brush 001-006": {
+		 "graphic"	: "brush 001-006",
+		 "primary"	: "warm",
+		 "support"	: [ "friendly","casual", "simple", "approachable", "lighthearted"]
+	},
+	"brush 007-015": {
+		"graphic"	: "brush 007-015",
+		 "primary"	: "bold",
+		 "support"	: [ "daring","direct", "strong"]
+	},
+	"brush 016-022": {
+		"graphic"	: "brush 016-022",
+		 "primary"	: "funky",
+		 "support"	: [ "youthful","sassy", "punchy"]
+	},
+	"brush 023-028": {
+		"graphic"	: "brush 023-028",
+		 "primary"	: "casual",
+		 "support"	: [ "bubbly","energetic"]
+	},
+	"lines 001-005": {
+		"graphic"	: "lines 001-015",
+		 "primary"	: "modern",
+		 "support"	: [ "classy","classic", "strong", "daring", "striking", "traditional", "masculine"]
+	},
+	"lines 006-009": {
+		"graphic"	: "lines 006-008",
+		 "primary"	: "approachable",
+		 "support"	: [ "warm","friendly", "intellectual", "confident"]
+	},
+	"swash 001-007": {
+		"graphic"	: "swash 001-007",
+		 "primary"	: "sassy",
+		 "support"	: [ "striking","informal", "untraditional", "direct", "sleek"]
+	},
+	"swash 008-012": {
+		"graphic"	: "swash 008-012",
+		 "primary"	: "funky",
+		 "support"	: [ "sassy","bold"]
+	}
+}
